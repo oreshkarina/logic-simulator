@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    
+    <!-- Core Models -->
+    <Compile Include="Core\Models\Point2D.cs" />
+    <Compile Include="Core\Models\Connection.cs" />
+    
+    <!-- Core Logic -->
+    <Compile Include="Core\Logic\ILogicGate.cs" />
+    <Compile Include="Core\Logic\LogicGateBase.cs" />
+    <Compile Include="Core\Logic\AndGate.cs" />
+    <Compile Include="Core\Logic\OrGate.cs" />
+    <Compile Include="Core\Logic\NotGate.cs" />
+    <Compile Include="Core\Logic\XorGate.cs" />
+    
+    <!-- Core Simulation -->
+    <Compile Include="Core\Simulation\InputGate.cs" />
+    <Compile Include="Core\Simulation\OutputGate.cs" />
+    <Compile Include="Core\Simulation\Circuit.cs" />
+    
+    <!-- Data -->
+    <Compile Include="Data\TruthTable.cs" />
+    
+    <!-- UI -->
+    <Compile Include="UI\MainForm.cs" />
+    <Compile Include="UI\MainForm.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
